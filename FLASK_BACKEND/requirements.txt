@@ -1,15 +1,47 @@
-Flask
-torch
-torchvision
-transformers 
-pillow
-flask-cors
-pyttsx3
-groq
-# langchain
-# langchain-community
-# langchain-ollama
-Flask-PyMongo
-pandas
-pymongo
-rapidfuzz
+# =========================
+# Core Backend
+# =========================
+Flask==3.0.0
+flask-cors==4.0.0
+python-dotenv==1.0.1
+httpx==0.27.0
+
+# =========================
+# LangChain (Agent + Tools)
+# =========================
+langchain==0.2.14
+langchain-openai==0.1.22
+langchain-community==0.2.12
+
+# =========================
+# OpenAI
+# =========================
+openai==1.40.6
+tiktoken==0.7.0
+
+# =========================
+# Voice (Text-to-Speech)
+# =========================
+pyttsx3==2.90
+
+# =========================
+# Database (MongoDB)
+# =========================
+pymongo==4.8.0
+Flask-PyMongo==2.3.0
+dnspython==2.6.1
+
+# =========================
+# Data / Utilities
+# =========================
+pandas==2.2.2
+rapidfuzz==3.9.6
+requests==2.32.3
+pydantic==2.8.2
+typing-extensions==4.12.2
+
+# =========================
+# Image / Vision (OPTIONAL)
+# Keep only if used elsewhere
+# =========================
+pillow==10.4.0

@@ -1,2 +1,15 @@
 /venv
 /JS_BACKEND/node_modules
+/FLASK_BACKEND/VoiceAssistance_Updated/__pycache__/
+/FLASK_BACKEND/VoiceAssistance/__pycache__/
+/FLASK_BACKEND/VoiceAssistance_Updated/routes/__pycache__/
+/FLASK_BACKEND/VoiceAssistance_Updated/models/__pycache__/
+/FLASK_BACKEND/VoiceAssistance_Updated/venv
+/FLASK_BACKEND/VoiceAssistance_Updated/service/__pycache__/
+/FLASK_BACKEND/VoiceAssistance_Updated/llm_engine/__pycache__
+/FLASK_BACKEND/VoiceAssistance_Updated/agent/__pycache__
+# Environment variables
+.env
+.env.*
+/FLASK_BACKEND/.env
+/FLASK_BACKEND/VoiceAssistance_Updated/.env

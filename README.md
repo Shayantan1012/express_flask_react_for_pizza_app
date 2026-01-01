@@ -79,7 +79,7 @@ A **voice-controlled AI agent** built with **Flask** and **Google's Gemini API**
 
 - 🔤 Multilingual voice support (e.g., Hindi, Bengali)
 - 🧠 Voice assistant personalization
-- 📴 Offline voice command handling (local AI models)
+
 
 ---
 

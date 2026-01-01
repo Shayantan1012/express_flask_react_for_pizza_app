@@ -20,7 +20,6 @@ import VoiceIcon from './assets/voice.svg'
 
 function App() {
 
-
   const dispatch = useDispatch();
   const [popUp,setPopUp]= useState(false);
   const [camInfo,setCamInfo]=useState(false);
