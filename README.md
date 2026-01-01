@@ -82,29 +82,7 @@ An intelligent chatbot helps users with:
 | Speech | Text-to-Speech |
 | Deployment | Vercel, Render, Railway, MongoDB Atlas |
 
----
 
-## 📁 Project Structure
-
-```text
-SwadDesi
-├── FLASK_BACKEND
-│   ├── VoiceAssistance_Updated
-│   │   ├── agent
-│   │   ├── prompts
-│   │   ├── service
-│   │   ├── routes
-│   │   └── utils
-│   ├── image_model
-│   └── app.py
-├── JS_BACKEND
-├── FrontEnd
-├── venv
-├── .env.example
-├── .gitignore
-└── README.md
-
----
 
 ## 🔐 Security Practices
 - All API keys are stored securely using environment variables  
@@ -137,3 +115,27 @@ Coming soon.
 This project is open-source and available under the **MIT License**.
 
 You are free to use, modify, and distribute this project with proper attribution.
+
+---
+
+## 📁 Project Structure
+
+```text
+SwadDesi
+├── FLASK_BACKEND
+│   ├── VoiceAssistance_Updated
+│   │   ├── agent
+│   │   ├── prompts
+│   │   ├── service
+│   │   ├── routes
+│   │   └── utils
+│   ├── image_model
+│   └── app.py
+|   |__ .env
+├── JS_BACKEND
+├── FrontEnd
+├── venv
+├── .gitignore
+└── README.md
+
+---
