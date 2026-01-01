@@ -1,97 +1,164 @@
-# 🧡 Swad Desi - Indian Food Ordering App 🇮🇳
+🇮🇳 Swad Desi – AI-Powered Indian Food Ordering Platform
 
-**Swad Desi** is a modern, AI-powered Indian food ordering platform inspired by the richness of **Swadeshi culture**. Built using the **MERN (MongoDB, Express, React, Node.js)** stack, this full-stack web application offers seamless food ordering, menu browsing, admin product control, and intelligent AI features like image-based recognition, chatbot support, and a smart voice assistant.
+Swad Desi is a modern, AI-enhanced Indian food ordering application inspired by Swadeshi culture.
+It combines a full-stack MERN web platform with a Python-based AI backend that enables voice interaction, intelligent intent handling, and smart food discovery.
 
----
+The goal is to make food ordering feel natural — as if you’re talking to a human assistant.
 
-## 🚀 Features
+🚀 Key Features
+🏠 User-Facing Experience
 
-### 🏠 User-Facing Pages:
-- **Home Page** — Introduction, highlights of offerings, and attractive design.
-- **Menu Page** — Displays available Indian dishes with details and prices.
-- **About Page** — Tells the story and mission of Swad Desi.
-- **Login / Logout** — Secure user authentication system.
+Home Page — Highlights Indian cuisine and brand story
 
----
+Menu Page — Browse dishes with prices, descriptions, and availability
 
-### 🧠 AI-Powered Features:
+Cart Management — Add, remove, and review items
 
-#### 🤖 Chatbot Integration (Dialogflow API)
-An intelligent chatbot built using Google’s Dialogflow API helps customers with queries, food recommendations, and ordering.
+Authentication — Secure login & logout system
 
-#### 🖼️ Food Image Prediction  
-Upload a food image, and the system will:
-- Detect whether the food item is present in the menu.
-- Redirect the user to that item’s page if available.
+🧠 AI-Powered Capabilities
+🎙️ Smart Voice Assistant (Flask + LLM) ✅
 
-#### 🎙️ Voice Assistant (Gemini API + Flask) ✅ _NEW_  
-A **voice-controlled AI agent** built with **Flask** and **Google's Gemini API**:
-- Allows users to **speak commands** to:
-  - Search menu items.
-  - Add or remove items from the cart.
-  - Navigate pages or get personalized recommendations.
-- Offers **hands-free** interaction for accessibility and convenience.
-- Integrated directly into the UI with real-time microphone input and text-to-speech responses.
+A fully custom voice-controlled AI agent built with Flask and Large Language Models:
 
-> 🎧 This makes **Swad Desi** feel like you're talking to your personal food assistant.
+Users can speak naturally to:
 
----
+Search for food items
 
-## 🛠️ Admin Panel
+Ask if an item is available
 
-- **Product Management** — Admins can add, edit, and remove food items.
-- **Authentication** — Admin login/logout secured with JWT & bcrypt.
+Add or remove items from the cart
 
----
+Ask for prices
 
-## 🧑‍💻 Tech Stack
+Navigate pages (menu, home, cart)
 
-| Layer              | Technology                            |
-|--------------------|----------------------------------------|
-| Frontend           | React.js, Tailwind CSS                 |
-| Backend            | Node.js, Express.js                    |
-| Database           | MongoDB                                |
-| Authentication     | JWT + bcrypt                           |
-| AI Models          | Flask (Python) for image & voice AI    |
-| Chatbot            | Dialogflow (Google Cloud API)          |
-| Voice Assistant    | Gemini API via Flask backend           |
-| Deployment         | Vercel / Render / Railway / MongoDB Atlas |
+Proceed to checkout
 
----
+🔹 The system first detects intent, then executes business logic, and finally generates a natural spoken response.
+🔹 Missing information (like quantity) is handled intelligently via conversation loops.
 
-## 📁 Project Structure (High-Level)
+Example:
 
+User: “Add butter naan”
+
+Assistant: “How many butter naan would you like?”
+
+User: “Two”
+
+Assistant: “Two butter naan have been added to your cart.”
+
+🧠 Intent-Driven AI Architecture (New System)
+
+The voice assistant follows a clean three-stage flow:
+
+Intent Detection (LLM Prompting)
+
+Classifies intent (add_cart, price_query, product_query, etc.)
+
+Extracts products and quantities
+
+Intent Execution (Pure Backend Logic)
+
+Executes database actions (MongoDB)
+
+No LLM decision-making here
+
+Response Generation (LLM-Based Natural Speech)
+
+Generates exactly one human-like sentence
+
+Strictly aligned with the detected intent
+
+This design ensures:
+
+Predictable behavior
+
+Clean separation of concerns
+
+Easy future expansion
+
+🖼️ Food Image Recognition (Flask + ML)
+
+Users can upload a food image:
+
+The system detects whether the dish exists in the menu
+
+Redirects the user to the matching item if available
+
+🤖 Chatbot Integration
+
+An intelligent chatbot helps users with:
+
+Menu exploration
+
+General queries
+
+Food recommendations
+
+(Chatbot runs independently from the voice assistant)
+
+🛠️ Admin Panel
+
+Add, update, and delete food items
+
+Secure admin authentication
+
+Inventory & price management
+
+🧑‍💻 Tech Stack
+Layer	Technology
+Frontend	React.js, Tailwind CSS
+Backend (Main API)	Node.js, Express.js
+Database	MongoDB
+Authentication	JWT, bcrypt
+AI Backend	Python, Flask
+Voice AI	LLM-based intent & response engine
+Speech	Text-to-Speech (TTS)
+Image AI	Python ML models
+Deployment	Vercel / Render / Railway / MongoDB Atlas
+📁 Project Structure (High-Level)
 📦 SwadDesi
-├── FLASK_BACKEND/         # Python Flask server for AI tasks
-│   ├── voice_assistant/   # Gemini-powered voice assistant
-│   └── image_model/       # Food image recognition module
-├── FrontEnd/              # React + Tailwind + SpeechRecognition for UI
-├── JS_BACKEND/            # Node.js + Express API
-├── venv/                  # Python virtual environment
-├── .github/               # GitHub Actions / CI workflows
-├── .gitignore             # Files to ignore in Git
-└── README.md              # You are here!
+├── FLASK_BACKEND/
+│   ├── VoiceAssistance_Updated/
+│   │   ├── agent/          # LLM orchestrator & memory
+│   │   ├── prompts/        # Intent & response prompts
+│   │   ├── service/        # Business logic (intent execution)
+│   │   ├── routes/         # Flask API routes
+│   │   └── utils/          # TTS, validators, helpers
+│   ├── image_model/        # Food image recognition
+│   └── app.py
+├── JS_BACKEND/             # Node.js + Express APIs
+├── FrontEnd/               # React + Tailwind UI
+├── venv/                   # Python virtual environment
+├── .gitignore
+├── .env.example
+└── README.md
 
+🔐 Security & Best Practices
 
----
+API keys stored only in .env
 
-## 📢 Future Improvements
+.env excluded from Git history
 
-- 🔤 Multilingual voice support (e.g., Hindi, Bengali)
-- 🧠 Voice assistant personalization
+Secrets rotated if ever exposed
 
+Clean separation between AI logic and backend logic
 
----
+📢 Future Enhancements
 
-## 🎬 Demo
+🌐 Multilingual voice support (Hindi, Bengali, etc.)
 
-> Coming soon: Add a screen recording or GIF here showing voice assistant in action.
+🧠 Personalized voice assistant behavior
 
----
+🗣️ Continuous voice conversation mode
 
-## 📝 License
+📊 Voice-driven order analytics
 
-This project is open-source and available under the [MIT License](LICENSE).
+🎬 Demo
 
----
+🎥 Coming soon — voice assistant live demo video
 
+📝 License
+
+This project is open-source and available under the MIT License.
